@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novembro | Editor</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0b0f1a;
+      color: #e6e6e6;
+    }
+
+    header {
+      text-align: center;
+      padding: 90px 20px;
+      background: linear-gradient(180deg, #0b0f1a, #101a2e);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #4da3ff;
+    }
+
+    header p {
+      max-width: 680px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #cfcfcf;
+      line-height: 1.6;
+    }
+
+    .socials { margin-top: 35px; }
+
+    .socials a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      background: #1a2338;
+      color: #4da3ff;
+      border: 1px solid rgba(77,163,255,0.3);
+      transition: 0.25s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.06);
+      background: #22304d;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #9aa4b2;
+      font-size: 0.95rem;
+      margin-bottom: 45px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      display: block;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.55);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+    }
+
+    .card:hover img { transform: scale(1.08); }
+
+    .card p {
+      margin: 0;
+      padding: 12px 14px;
+      font-weight: 600;
+      color: #4da3ff;
+      background: #121a2a;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .prices {
+      background: #121a2a;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+      max-width: 780px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .prices p { font-size: 1.05rem; margin: 12px 0; }
+
+    .packages {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .email-btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 14px 28px;
+      border-radius: 16px;
+      background: #4da3ff;
+      color: #0b0f1a;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .email-btn:hover {
+      transform: scale(1.06);
+      background: #2f86e6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #7f8a99;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="socials">
+  <h1>Novembro 🎬</h1>
+  <p>
+    Editor de vídeos focado em <b>jogos</b>.<br> <br>
+    Contato ⬇️
+  </p>
+
+  <div class="socials">
+    <a href="https://instagram.com/novemmbruh" target="_blank">📸 Instagram</a>
+    <a href="#">💬 Discord: navembruh</a>
+  </div>
+
+  <p style="margin-top:20px; color:#cfcfcf;">
+    📩 Email: <b>novemmbruh@gmail.com</b>
+  </p>
+</header>
+
+<section>
+  <h2>Portfólio</h2>
+  <p class="subtitle">*Edições demonstrativas feitas a partir de clips públicos. Conteúdo pertence aos respectivos criadores.*</p>
+
+  <div class="grid">
+    <a class="card" href="https://youtu.be/GNbQg1rMup4" target="_blank"><img src="https://img.youtube.com/vi/GNbQg1rMup4/hqdefault.jpg"><p>Edição Demo - Smile</p></a>
+    <a class="card" href="https://youtube.com/shorts/TCpLvt3c1qs" target="_blank"><img src="https://img.youtube.com/vi/TCpLvt3c1qs/hqdefault.jpg"><p>Edição Demo - Fernanda</p></a>
+    <a class="card" href="https://youtu.be/6t7l3rL4pWU" target="_blank"><img src="https://img.youtube.com/vi/6t7l3rL4pWU/hqdefault.jpg"><p>Edição Demo - Brie</p></a>
+    <a class="card" href="https://youtu.be/M0tE0DcIEsU" target="_blank"><img src="https://img.youtube.com/vi/M0tE0DcIEsU/hqdefault.jpg"><p>Edição Demo - Aludra</p></a>
+    <a class="card" href="https://youtu.be/TN-85CHCPkc" target="_blank"><img src="https://img.youtube.com/vi/TN-85CHCPkc/hqdefault.jpg"><p>Edição Demo - Ester</p></a>
+    <a class="card" href="https://youtube.com/shorts/8sNgQ_EwWzw" target="_blank"><img src="https://img.youtube.com/vi/8sNgQ_EwWzw/hqdefault.jpg"><p>Edição Demo - Try</p></a>
+    <a class="card" href="https://youtu.be/HUmmu8FZ56c" target="_blank"><img src="https://img.youtube.com/vi/HUmmu8FZ56c/hqdefault.jpg"><p>Edição Demo - Link</p></a>
+    <a class="card" href="https://youtu.be/-6jpguzle_g" target="_blank"><img src="https://img.youtube.com/vi/-6jpguzle_g/hqdefault.jpg"><p>Edição Demo - Gii</p></a>
+    <a class="card" href="https://youtu.be/gpJn6cbNvfk" target="_blank"><img src="https://img.youtube.com/vi/gpJn6cbNvfk/hqdefault.jpg"><p>Edição Demo - RataeIa</p></a>
+    <a class="card" href="https://youtu.be/2m9IbvmpCOc" target="_blank"><img src="https://img.youtube.com/vi/2m9IbvmpCOc/hqdefault.jpg"><p>Edição Demo - Aninha</p></a>
+    <a class="card" href="https://youtu.be/yuDMZ6J_aXQ" target="_blank"><img src="https://img.youtube.com/vi/yuDMZ6J_aXQ/hqdefault.jpg"><p>Edição Demo - Lowz</p></a>
+    <a class="card" href="https://youtube.com/shorts/qXw7yPXOxEg" target="_blank"><img src="https://img.youtube.com/vi/qXw7yPXOxEg/hqdefault.jpg"><p>Edição - Gii</p></a>
+  </div>
+</section>
+
+<section>
+  <h2>Preços</h2>
+  <p class="subtitle">Valores simples — pacotes mensais disponíveis.</p>
+
+  <div class="prices">
+    <p>🎬 Shorts até 60s → <b>R$15</b></p>
+    <p>⚡ Shorts até 1:30 → <b>R$20</b></p>
+    <p>📺 Vídeo YouTube 8–10min → <b>R$40</b></p>
+
+    <div class="packages">
+      <p><b>Curto Mensal:</b> 12 Shorts → R$150</p>
+      <p><b>Curto Full:</b> 20 Shorts → R$200</p>
+      <p><b>Combo:</b> 4 Vídeos + 4 Shorts → R$200</p>
+    </div>
+
+    <a class="email-btn" href="#socials">✉️ Entrar em contato</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Novembro — Editor de Vídeos | Portfólio Demonstrativo
+</footer>
+
+</body>
+</html>
