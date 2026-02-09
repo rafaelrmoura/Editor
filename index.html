@@ -3,189 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Novembro | Editor</title>
+  <title>Novembro | Video Editor</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0b0f1a;
-      color: #e6e6e6;
-    }
+/* BODY */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0b0f1a;
+  color: #e6e6e6;
+}
 
-    header {
-      text-align: center;
-      padding: 90px 20px;
-      background: linear-gradient(180deg, #0b0f1a, #101a2e);
-      box-shadow: 0 4px 25px rgba(0,0,0,0.5);
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #0b0f1a, #101a2e);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+}
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: #4da3ff;
-    }
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #4da3ff;
+}
 
-    header p {
-      max-width: 680px;
-      margin: auto;
-      font-size: 1.1rem;
-      color: #cfcfcf;
-      line-height: 1.6;
-    }
+header p {
+  max-width: 680px;
+  margin: auto;
+  font-size: 1rem;
+  color: #cfcfcf;
+  line-height: 1.6;
+}
 
-    .socials { margin-top: 35px; }
+/* SOCIALS */
+.socials {
+  margin-top: 25px;
+}
 
-    .socials a {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 22px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 600;
-      background: #1a2338;
-      color: #4da3ff;
-      border: 1px solid rgba(77,163,255,0.3);
-      transition: 0.25s ease;
-    }
+.socials a,
+.socials span {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+  background: #1a2338;
+  color: #4da3ff;
+  border: 1px solid rgba(77,163,255,0.3);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
 
-    .socials a:hover {
-      transform: scale(1.06);
-      background: #22304d;
-    }
+/* LANGUAGE BUTTONS */
+.lang-buttons {
+  margin-top: 30px;
+}
 
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 70px 20px;
-    }
+.lang-buttons button {
+  margin: 6px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: none;
+  background: #4da3ff;
+  color: #0b0f1a;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    h2 {
-      text-align: center;
-      font-size: 2.1rem;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
+/* SECTIONS */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 16px;
+}
 
-    .subtitle {
-      text-align: center;
-      color: #9aa4b2;
-      font-size: 0.95rem;
-      margin-bottom: 45px;
-    }
+h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
+.subtitle {
+  text-align: center;
+  color: #9aa4b2;
+  font-size: 0.9rem;
+  margin-bottom: 35px;
+}
 
-    .card {
-      display: block;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #000;
-      text-decoration: none;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.55);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
 
-    .card img {
-      width: 100%;
-      display: block;
-      transition: transform 0.4s ease;
-    }
+/* CARD */
+.card {
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.55);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.65);
-    }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+}
 
-    .card:hover img { transform: scale(1.08); }
+/* THUMBNAIL (ESSENCIAL) */
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain; /* mantém shorts e vídeos longos corretos */
+  background: #000;
+  display: block;
+}
 
-    .card p {
-      margin: 0;
-      padding: 12px 14px;
-      font-weight: 600;
-      color: #4da3ff;
-      background: #121a2a;
-      font-size: 0.95rem;
-      text-align: center;
-    }
+/* CARD TITLE */
+.card p {
+  padding: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  background: #121a2a;
+  color: #4da3ff;
+}
 
-    .prices {
-      background: #121a2a;
-      padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.5);
-      max-width: 780px;
-      margin: auto;
-      text-align: center;
-    }
+/* PRICES */
+.prices {
+  background: #121a2a;
+  padding: 30px 20px;
+  border-radius: 18px;
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
 
-    .prices p { font-size: 1.05rem; margin: 12px 0; }
+.prices p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
 
-    .packages {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
+.packages {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
 
-    .email-btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 14px 28px;
-      border-radius: 16px;
-      background: #4da3ff;
-      color: #0b0f1a;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.25s ease;
-    }
+/* CONTACT BUTTON */
+.contact-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 26px;
+  border-radius: 16px;
+  background: #4da3ff;
+  color: #0b0f1a;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-    .email-btn:hover {
-      transform: scale(1.06);
-      background: #2f86e6;
-    }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #7f8a99;
+  font-size: 0.85rem;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #7f8a99;
-      font-size: 0.9rem;
-    }
+/* LANGUAGE TOGGLE */
+.lang {
+  display: none;
+}
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }
-    }
+.lang.active {
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 200px;
+  }
+} 
   </style>
 </head>
 <body>
 
-<header id="socials">
+<header id="top">
   <h1>Novembro 🎬</h1>
-  <p>
-    Editor de vídeos focado em <b>jogos</b>.<br> <br>
-    Contato ⬇️
-  </p>
+  <p>Video editor focused on gaming content.</p>
+  <p>Editor de vídeos focado em jogos.</p>
 
   <div class="socials">
     <a href="https://instagram.com/novemmbruh" target="_blank">📸 Instagram</a>
-    <p href="#">💬 Discord: navembruh</p>
+    <span>💬 Discord: navembruh</span>
   </div>
 
-  <p style="margin-top:20px; color:#cfcfcf;">
-    📩 Email: <b>novemmbruh@gmail.com</b>
+  <p style="margin-top:15px;">📩 Email: <b>novemmbruh@gmail.com</b></p>
+
+  <div class="lang-buttons">
+    <p style="opacity:0.8; font-size:0.9rem;">
+    Selecione o idioma / Select your language
   </p>
+    <button onclick="showLang('pt')">🇧🇷 Português</button>
+    <button onclick="showLang('en')">🇺🇸 English</button>
+  </div>
 </header>
 
-<section>
-  <h2>Portfólio</h2>
-  <p class="subtitle">*Edições demonstrativas feitas a partir de clips públicos. Conteúdo pertence aos respectivos criadores.*</p>
+<!-- PORTUGUÊS -->
+<div id="pt" class="lang active">
+  <section>
+    <h2>Portfólio</h2>
+    <p class="subtitle">*Edições demonstrativas feitas a partir de clips públicos. Conteúdo pertence aos respectivos criadores.*</p>
 
-  <div class="grid">
+    <div class="grid">
     <a class="card" href="https://youtu.be/GNbQg1rMup4" target="_blank"><img src="https://img.youtube.com/vi/GNbQg1rMup4/hqdefault.jpg"><p>Edição Demo - Smile</p></a>
     <a class="card" href="https://youtube.com/shorts/TCpLvt3c1qs" target="_blank"><img src="https://img.youtube.com/vi/TCpLvt3c1qs/hqdefault.jpg"><p>Edição Demo - Fernanda</p></a>
     <a class="card" href="https://youtu.be/6t7l3rL4pWU" target="_blank"><img src="https://img.youtube.com/vi/6t7l3rL4pWU/hqdefault.jpg"><p>Edição Demo - Brie</p></a>
@@ -199,30 +252,89 @@
     <a class="card" href="https://youtu.be/yuDMZ6J_aXQ" target="_blank"><img src="https://img.youtube.com/vi/yuDMZ6J_aXQ/hqdefault.jpg"><p>Edição Demo - Lowz</p></a>
     <a class="card" href="https://youtube.com/shorts/qXw7yPXOxEg" target="_blank"><img src="https://img.youtube.com/vi/qXw7yPXOxEg/hqdefault.jpg"><p>Edição - Gii</p></a>
   </div>
-</section>
+  </section>
 
-<section>
-  <h2>Preços</h2>
+  <section>
+    <h2>Preços</h2>
   <p class="subtitle">Valores simples — pacotes mensais disponíveis.</p>
 
   <div class="prices">
-    <p>🎬 Shorts até 60s → <b>R$15</b></p>
-    <p>⚡ Shorts até 1:30 → <b>R$20</b></p>
-    <p>📺 Vídeo YouTube 8–10min → <b>R$40</b></p>
+    <p>🎬 Shorts até 60s → <b>R$25</b></p>
+    <p>⚡ Shorts até 1:30 → <b>R$35</b></p>
+    <p>📺 Vídeo YouTube 8–10min → <b>R$70</b></p>
 
     <div class="packages">
-      <p><b>Curto Mensal:</b> 12 Shorts → R$150</p>
-      <p><b>Curto Full:</b> 20 Shorts → R$200</p>
-      <p><b>Combo:</b> 4 Vídeos + 4 Shorts → R$200</p>
+      <p><b>Curto Mensal:</b> 12 Shorts → R$300</p>
+      <p><b>Curto Full:</b> 20 Shorts → R$450</p>
+      <p><b>Combo Mensal:</b> 4 Vídeos + 4 Shorts → R$300</p>
     </div>
 
-    <a class="email-btn" href="#socials">✉️ Entrar em contato</a>
+    <div class="packages">
+        Todos os pacotes podem ser ajustados de acordo com o seu conteúdo e necessidades. <br>
+Se quiser, me diga o formato que você tem em mente e a gente adapta.
+      </div>
+
+      <a class="contact-btn" href="#top">Entrar em contato</a>
+    </div>
+  </section>
+</div>
+
+<!-- INGLÊS -->
+<div id="en" class="lang">
+  <section>
+    <h2>Portfolio</h2>
+    <p class="subtitle">*Demo edits made using public clips. Content belongs to their respective creators.*</p>
+
+    <div class="grid">
+    <a class="card" href="https://youtu.be/GNbQg1rMup4" target="_blank"><img src="https://img.youtube.com/vi/GNbQg1rMup4/hqdefault.jpg"><p>Demo Edit - Smile</p></a>
+    <a class="card" href="https://youtube.com/shorts/TCpLvt3c1qs" target="_blank"><img src="https://img.youtube.com/vi/TCpLvt3c1qs/hqdefault.jpg"><p>Demo Edit - Fernanda</p></a>
+    <a class="card" href="https://youtu.be/6t7l3rL4pWU" target="_blank"><img src="https://img.youtube.com/vi/6t7l3rL4pWU/hqdefault.jpg"><p>Demo Edit - Brie</p></a>
+    <a class="card" href="https://youtu.be/M0tE0DcIEsU" target="_blank"><img src="https://img.youtube.com/vi/M0tE0DcIEsU/hqdefault.jpg"><p>Demo Edit - Aludra</p></a>
+    <a class="card" href="https://youtu.be/TN-85CHCPkc" target="_blank"><img src="https://img.youtube.com/vi/TN-85CHCPkc/hqdefault.jpg"><p>Demo Edit - Ester</p></a>
+    <a class="card" href="https://youtube.com/shorts/8sNgQ_EwWzw" target="_blank"><img src="https://img.youtube.com/vi/8sNgQ_EwWzw/hqdefault.jpg"><p>Demo Edit - Try</p></a>
+    <a class="card" href="https://youtu.be/HUmmu8FZ56c" target="_blank"><img src="https://img.youtube.com/vi/HUmmu8FZ56c/hqdefault.jpg"><p>Demo Edit - Link</p></a>
+    <a class="card" href="https://youtu.be/-6jpguzle_g" target="_blank"><img src="https://img.youtube.com/vi/-6jpguzle_g/hqdefault.jpg"><p>Demo Edit - Gii</p></a>
+    <a class="card" href="https://youtu.be/gpJn6cbNvfk" target="_blank"><img src="https://img.youtube.com/vi/gpJn6cbNvfk/hqdefault.jpg"><p>Demo Edit - RataeIa</p></a>
+    <a class="card" href="https://youtu.be/2m9IbvmpCOc" target="_blank"><img src="https://img.youtube.com/vi/2m9IbvmpCOc/hqdefault.jpg"><p>Demo Edit - Aninha</p></a>
+    <a class="card" href="https://youtu.be/yuDMZ6J_aXQ" target="_blank"><img src="https://img.youtube.com/vi/yuDMZ6J_aXQ/hqdefault.jpg"><p>Demo Edit - Lowz</p></a>
+    <a class="card" href="https://youtube.com/shorts/qXw7yPXOxEg" target="_blank"><img src="https://img.youtube.com/vi/qXw7yPXOxEg/hqdefault.jpg"><p>Edit - Gii</p></a>
   </div>
-</section>
+  </section>
+
+  <section>
+    <h2>Pricing</h2>
+    <p class="subtitle">Simple values — monthly packages.</p>
+    <div class="prices">
+      <p>🎬Short up to 60s → <b>$12</b></p>
+      <p>⚡Short up to 1:30 → <b>$18</b></p>
+      <p>📺YouTube 8–10 min → <b>$45</b></p>
+
+      <div class="packages">
+        <p><b>Shorts Monthly:</b>12 shorts → $75</p>
+        <p><b>Shorts Full:</b> 20 shorts → $90</p>
+        <p><b>Combo Monthly:</b> 4 videos + 4 shorts → $160</p>
+      </div>
+      
+      <div class="packages">
+        All packages are flexible depending on your content and needs. <br>
+If you want, tell me what format you have in mind and we can adjust it.
+      </div>
+
+      <a class="contact-btn" href="#top">Contact me</a>
+    </div>
+  </section>
+</div>
 
 <footer>
-  © 2026 Novembro — Editor de Vídeos | Portfólio Demonstrativo
+  © 2026 Novembro — Video Editor Portfolio
 </footer>
+
+<script>
+  function showLang(lang) {
+    document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+    document.getElementById(lang).classList.add('active');
+  }
+</script>
 
 </body>
 </html>
